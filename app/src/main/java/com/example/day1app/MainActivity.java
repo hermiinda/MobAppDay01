@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String inr = rupeeVal.getText().toString();
                 String gbp = poundVal.getText().toString();
-                if (inr.isEmpty() | inr.equals("0")) {
-                    if (gbp.isEmpty()) {
+                if (inr.isEmpty() | inr.equals("0") | inr.equals("0.0")) {
+                    if (gbp.isEmpty() | gbp.equals("0") | gbp.equals("0.0")) {
                         rupeeVal.setText("0");
                         poundVal.setText("0");
                         text.setText("Please Enter the value");
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else{
-                    if(!gbp.isEmpty() & !gbp.equals("0") &  !inr.equals("0")){
+                    if(!gbp.isEmpty() & !gbp.equals("0") &  !gbp.equals("0.0")){
                          text.setText("Remove either one value to avoid confusion");
                     }
                     else{
